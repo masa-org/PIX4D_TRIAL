@@ -70,6 +70,8 @@ Run `secrets.env` like below:
 - This script will trigger the image processing.
 - Depending on the size/numbers of images, it would take loooong time.
 - Once the processing start or end, you will be notified by email.
+![image](https://github.com/masa-org/PIX4D_TRIAL/assets/45160975/2cec8395-d54a-4170-9496-13f8d888fd60)
+
 
 ### 6. Check the processing status
 
