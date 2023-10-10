@@ -10,6 +10,7 @@
 - `curl`command
 - `jq` command
 - `watch` command
+- `aws` command
 
 ## Steps - Cloud API
 
@@ -38,6 +39,7 @@ Run `secrets.env` like below:
 
 - This script will obtain a `Bearer token`.
 - Bearer token is an api key necessary to invode Cloud API.
+- After this step, file called `access_token.txt` which contains the Bearer token is created. 
 
 ### 3. Project set up
 
@@ -45,6 +47,10 @@ Run `secrets.env` like below:
 
 - This script will create a PIX4D project.
 - This script also get an AWS Credential for S3 access.
+- After this step, file called `project_setup.env` which contains various configs is created.
+
+### 4. Upload images to S3
+
 
 ## Steps - SDK
 
