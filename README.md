@@ -13,11 +13,11 @@
 
 ## Steps - Cloud API
 
-0. Clond this repo
+### 0. Clond this repo
 
 `git clone <this repo>`
 
-1. Go to `Cloud_API` directory, and add a PIX4D credentials.
+### 1. Go to `Cloud_API` directory, and add a PIX4D credentials.
 
 `cd Cloud_API`
 
@@ -32,14 +32,14 @@ Run `secrets.env` like below:
 
 `. ./secrets.env`
 
-2. Get bearer token
+### 2. Get bearer token
 
 `./1.get_bearer_token.sh`
 
 - This script will obtain a `Bearer token`.
 - Bearer token is an api key necessary to invode Cloud API.
 
-3. Project set up
+### 3. Project set up
 
 `./2.create_project.sh`
 
