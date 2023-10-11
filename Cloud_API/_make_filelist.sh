@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+# set -x
 
 . ./project_setup.env
 
@@ -10,34 +10,32 @@ then
   exit 1
 fi
 
-PREFIX=${S3_BASE_PATH}/Images_subset_1469
-FILE_DIR=../images/Pix4Dmatic_example_1469_images/Images_subset_1469
-FILELIST=filelist.json
+PREFIX=${S3_BASE_PATH}
+FILE_DIR=../images/image_subset_100
+OUTPUT=filelist.json
 
-LEN=$(find ${FILE_DIR} -iname '*.jpg' | wc -w)
+FILELIST=$(find ${FILE_DIR} -iname '*.jpg')
+LEN=$(echo ${FILELIST} | wc -w)
+
 i=0
 
-tee ${FILELIST} <<EOT
+tee ${OUTPUT} <<EOT
 { 
   "input_file_keys": [
 EOT
 
-for F in ${FILE_DIR}/*
+for F in ${FILELIST}
 do
-  EXTENTION=$(echo ${F##*.} | tr '[:upper:]' '[:lower:]')
-  if [ ${EXTENTION} = "jpg" ]
-  then
-    let i++
+  let i++
 
-    if (( ${i} < ${LEN} )); then
-      echo \"${PREFIX}/${F##*/}\", >> ${FILELIST} 
-    else
-      echo \"${PREFIX}/${F##*/}\" >> ${FILELIST} 
-    fi
+  if (( ${i} < ${LEN} )); then
+    echo \"${PREFIX}/${F##*/}\", >> ${OUTPUT} 
+  else
+    echo \"${PREFIX}/${F##*/}\" >> ${OUTPUT} 
   fi
 done
 
-tee -a ${FILELIST} <<EOT
+tee -a ${OUTPUT} <<EOT
   ]
 }
 EOT

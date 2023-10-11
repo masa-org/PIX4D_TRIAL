@@ -1,9 +1,8 @@
-
 #!/bin/bash
 
-set -x
+# set -x
 
-PROJECT_NAME=masa_test
+PROJECT_NAME=urban-area
 PIX4D_ACCESS_TOKEN=$(cat access_token.txt)
 
 if [ -z "${PIX4D_ACCESS_TOKEN}" ]

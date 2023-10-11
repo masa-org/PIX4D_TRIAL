@@ -1,10 +1,10 @@
 #!/bin/bash
 
-set -x
+# set -x
 
 . ./project_setup.env
 
-IMAGE_DIR=../images/Pix4Dmatic_example_1469_images
+IMAGE_DIR=../images/image_subset_100
 
 if [ -z ${AWS_ACCESS_KEY_ID} ]
 then 

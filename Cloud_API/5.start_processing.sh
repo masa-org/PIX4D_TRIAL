@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+# set -x
 
 . ./project_setup.env
 
@@ -19,6 +19,6 @@ then
   exit
 fi
 
-curl --request POST --url https://cloud.pix4d.com/project/api/v3/projects/${PROJECT_ID}/start_processing/ \
+curl -s --request POST --url https://cloud.pix4d.com/project/api/v3/projects/${PROJECT_ID}/start_processing/ \
   --header "Authorization: Bearer ${PIX4D_ACCESS_TOKEN}" \
   --header "Content-Type: application/json"
