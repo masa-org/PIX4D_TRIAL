@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# output: filelist.json
+
 # set -x
 
 . ./project_setup.env
@@ -29,9 +31,9 @@ do
   let i++
 
   if (( ${i} < ${LEN} )); then
-    echo \"${PREFIX}/${F##*/}\", >> ${OUTPUT} 
+    echo \"${PREFIX}/${F##*/}\", | tee -a ${OUTPUT} 
   else
-    echo \"${PREFIX}/${F##*/}\" >> ${OUTPUT} 
+    echo \"${PREFIX}/${F##*/}\" | tee -a ${OUTPUT} 
   fi
 done
 
